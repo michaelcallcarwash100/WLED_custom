@@ -26,9 +26,9 @@ jobs:
     - name: Install PlatformIO
       run: pip install platformio
 
-    - name: Build Firmware for ESP8266 (D1 Mini)
+    - name: Build Firmware for ESP8266
       run: |
-        platformio run --environment esp8266_2m  # Builds for ESP8266 (D1 Mini)
+        platformio run --environment esp8266  # Builds for ESP8266
 
     - name: Build Firmware for ESP32
       run: |
