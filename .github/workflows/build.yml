@@ -34,6 +34,10 @@ jobs:
       run: |
         platformio run --environment esp32dev  # Builds for ESP32
 
+    - name: List Build Output
+      run: |
+        ls -R .pio/build  # This will list all files to check if the firmware.bin exists
+
     - name: Upload Firmware Artifacts
       uses: actions/upload-artifact@v4  # Updated to v4
       with:
