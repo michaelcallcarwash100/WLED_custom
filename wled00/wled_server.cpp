@@ -100,7 +100,7 @@ bool captivePortal(AsyncWebServerRequest *request)
   hostH = request->getHeader(F("Host"))->value();
 
   // Check if the user is trying to access the IP 4.3.2.1
-  if (hostH == "4.3.2.1") {
+  if (hostH == F("4.3.2.1")) {
     DEBUG_PRINTLN(F("Captive portal"));
     AsyncWebServerResponse *response = request->beginResponse(302);
     response->addHeader(F("Location"), F("http://4.3.2.1"));
