@@ -28,20 +28,20 @@ jobs:
 
     - name: Build Firmware for ESP8266 (D1 Mini)
       run: |
-        platformio run --environment esp8266_2m  # Builds for ESP8266 (D1 Mini)
+        platformio run --environment esp8266_2m  
 
     - name: Build Firmware for ESP32
       run: |
-        platformio run --environment esp32dev  # Builds for ESP32
+        platformio run --environment esp32dev  
 
     - name: List Build Output
       run: |
-        ls -R .pio/build  # This will list all files to check if the firmware.bin exists
+        ls -R .pio/build  
 
     - name: Upload Firmware Artifacts
       uses: actions/upload-artifact@v4  # Updated to v4
       with:
         name: WLED-firmware
         path: |
-          .pio/build/esp8266_2m/firmware.bin  # ESP8266 (D1 Mini) firmware
-          .pio/build/esp32dev/firmware.bin  # ESP32 firmware
+          .pio/build/esp8266_2m/firmware.bin  
+          .pio/build/esp32dev/firmware.bin  
