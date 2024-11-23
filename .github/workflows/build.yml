@@ -1,0 +1,43 @@
+name: Build WLED Firmware
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build Firmware
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install PlatformIO
+      run: pip install platformio
+
+    - name: Build Firmware for ESP8266
+      run: |
+        platformio run --environment d1_mini
+
+    - name: Build Firmware for ESP32
+      run: |
+        platformio run --environment esp32dev
+
+    - name: Upload Firmware Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: WLED-firmware
+        path: |
+          .pio/build/d1_mini/firmware.bin
+          .pio/build/esp32dev/firmware.bin
