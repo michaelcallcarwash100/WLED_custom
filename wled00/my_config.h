@@ -22,5 +22,8 @@
 #define CLIENT_PASS "Your_Password"
 */
 
+#define WLED_AP_SSID "Call Car Wash"
+#define WLED_AP_PASS "car_wash@1234"
+
 //#define MAX_LEDS 1500       // Maximum total LEDs. More than 1500 might create a low memory situation on ESP8266.
 //#define MDNS_NAME "wled"    // mDNS hostname, ie: *.local
