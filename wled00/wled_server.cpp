@@ -91,7 +91,7 @@ void createEditHandler(bool enable) {
   }
 }
 
-bool captivePortal(AsyncWebServerRequest *request)
+/*bool captivePortal(AsyncWebServerRequest *request)
 {
   if (ON_STA_FILTER(request)) return false; //only serve captive in AP mode
   String hostH;
@@ -106,7 +106,7 @@ bool captivePortal(AsyncWebServerRequest *request)
     return true;
   }
   return false;
-}
+}*/
 
 void initServer()
 {
