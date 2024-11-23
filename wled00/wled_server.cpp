@@ -91,9 +91,9 @@ void createEditHandler(bool enable) {
   }
 }
 
-/*bool captivePortal(AsyncWebServerRequest *request)
+bool captivePortal(AsyncWebServerRequest *request)
 {
-  if (ON_STA_FILTER(request)) return false; //only serve captive in AP mode
+  /*if (ON_STA_FILTER(request)) return false; //only serve captive in AP mode
   String hostH;
   if (!request->hasHeader(F("Host"))) return false;
   hostH = request->getHeader(F("Host"))->value();
@@ -105,8 +105,8 @@ void createEditHandler(bool enable) {
     request->send(response);
     return true;
   }
-  return false;
-}*/
+  return false;*/
+}
 
 void initServer()
 {
